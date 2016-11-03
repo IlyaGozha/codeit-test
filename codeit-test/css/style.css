@@ -1,0 +1,229 @@
+.block {
+    height: 350px;
+    overflow: hidden;
+}
+
+.list {
+    overflow-y: auto;
+    height: 318px;
+}
+
+.list ul {
+    padding-left: 0;
+    border: 1px solid black;
+    list-style: none;
+}
+
+.list ul li {
+    font-size: 21px;
+    border-bottom: 1px solid black;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.headerUp {
+    background-color: lightgray;
+    color: black;
+    font-size: 24px;
+    padding-left: 15px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.totalNumber {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    margin: 90px auto;
+}
+
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+.col-item {
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.col-item .photo img {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.col-item .info {
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+
+.col-item .desc {
+    /*width: 50%;*/
+    float: left;
+    margin-top: 5px;
+}
+
+.col-item .desc h5 {
+    line-height: 20px;
+    margin: 0;
+}
+
+.col-item .separator {
+    border-top: 1px solid #E1E1E1;
+}
+
+.clear-left {
+    clear: left;
+}
+
+.col-item .separator p {
+    line-height: 20px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.col-item .separator p i {
+    margin-right: 5px;
+}
+
+.col-item .author {
+    width: 50%;
+    float: left;
+}
+
+.col-item .author {
+    border-right: 1px solid #E1E1E1;
+}
+
+.col-item .date {
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+
+.controls {
+    margin-top: 0px;
+}
+
+[data-slide="prev"] {
+    margin-right: 10px;
+}
+
+.nBut {
+    font-size: 23px;
+    color: black;
+    background-color: white;
+    padding: 0 10px;
+}
+
+.nBut:hover {
+    color: black;
+}
+
+.headerUpNews {
+    padding: 0 15px;
+    background-color: lightgray;
+}
+
+.percent {
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid;
+    padding: 15px 0;
+    border-radius: 50px;
+    width: 70px;
+    margin: 35px auto 0 auto;
+    display: block;
+    background-color: lightgray;
+}
+
+.partner {
+    transform: rotate(270deg);
+    text-align: center;
+    font-size: 25px;
+    margin-top: 100px;
+    margin: 33px 0 0 0;
+    border: 1px solid;
+    padding: 30px;
+}
+
+#flotcontainer {
+    width: 300px;
+    height: 300px;
+    text-align: left;
+}
+
+.centered-form {
+    margin-top: 60px;
+}
+
+.centered-form .panel {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 100px;
+    height: 100px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 110px auto;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+form.ng-valid {
+    color: green;
+}
+
+form.ng-invalid {
+    color: red;
+}
+
+input.ng-valid {
+    color: green;
+}
+
+input.ng-invalid {
+    color: red;
+}
+
+.cPartner {
+    display: inline-block;
+}
+
+.container-outer {
+    overflow-x: auto;
+    width: 100%;
+    height: 300px;
+}
+
+.container-inner {
+    min-width: 600px;
+    height: 261px;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+}

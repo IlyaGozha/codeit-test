@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Starter Template</title>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Registration</h3> </div>
+                    <div class="panel-body" data-ng-controller="help">
+                        <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+                        <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+                        <form name="helpForm" novalidate role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group"> <span class="label label-danger" data-ng-show="submitted && helpForm.fName.$error.required">Required!</span> <span class="label label-danger" data-ng-show="helpForm.fName.$error.minlength">Min 3 char</span> <span class="label label-danger" data-ng-show="helpForm.fName.$error.maxlength">Max 60 char</span> <span class="label label-danger" data-ng-show="helpForm.fName.$error.pattern">Text only</span>
+                                        <input type="text" name="fName" id="first_name" data-ng-model="fName" class="form-control input-sm" placeholder="First Name" ng-minlength="3" ng-maxlength="60" ng-pattern="/^(\D)+$/" required> </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group"> <span class="label label-danger" data-ng-show="submitted && helpForm.lName.$error.required">Required!</span> <span class="label label-danger" data-ng-show="helpForm.lName.$error.minlength">Min 3 char</span> <span class="label label-danger" data-ng-show="helpForm.lName.$error.maxlength">Max 60 char</span> <span class="label label-danger" data-ng-show="helpForm.lName.$error.pattern">Text only</span>
+                                        <input type="text" name="lName" id="last_name" data-ng-model="lName" class="form-control input-sm" placeholder="Last Name" ng-minlength="3" ng-maxlength="60" ng-pattern="/^(\D)+$/" required> </div>
+                                </div>
+                            </div>
+                            <div class="form-group"> <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span> <span class="label label-danger" data-ng-show="submitted && helpForm.$error.pattern">Invalid email!</span>
+                                <input type="email" name="email" id="email" data-ng-model="email" class="form-control input-sm" placeholder="Email Address" ng-pattern="emailFormat" required> </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group"><span class="label label-danger" data-ng-show="submitted && helpForm.password.$error.required">Required!</span>
+                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" ng-model="password" required> </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="confirmPassword" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password" ng-model="confirmPassword" compare-to="password" required> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group"> <span class="label label-danger" data-ng-show="submitted && helpForm.gender.$error.required">Required!</span>
+                                        <select name="gender" data-ng-model="gender" data-ng-options="id as value for (id, value) in genderOptions" class="form-control" required>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" ng-model="readTermsConditions" ng-true-value="2" check-required>Agreed to terms</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Register" class="btn btn-info btn-block" data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)"> </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/reg.js"></script>
+</body>
+
+</html>

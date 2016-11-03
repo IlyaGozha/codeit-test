@@ -1,0 +1,24 @@
+ <div class="block col-md-12" id="Partners">
+            <div class="headerUpNews">
+                <div class="row">
+                    <p class="headerUp col-md-8 col-sm-7 col-xs-6">Partners</p>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <div class="controls pull-right ">
+                            <a class="nBut" ng-click="sortField = 'name';reverse = !reverse">Name</a> 
+                            <a class="nBut" ng-click="sortField = 'value';reverse = !reverse">Percentage</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container-outer">
+   <div class="container-inner">
+      <div class="cPartner" ng-repeat="partner in companySelect.partners | filter:query | orderBy:sortField:reverse">
+                    <p class="percent">{{partner.value}}%</p>
+                    <p class="partner">{{partner.name}}</p>
+                </div>
+   </div>
+</div>
+                
+            </div>
+        </div>
